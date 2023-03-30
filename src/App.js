@@ -13,7 +13,7 @@ function App() {
       <div className="my-4"></div>
       <div className="flex flex-row justify-center">
         <h1 className="text-xl">Simple POS System </h1>
-        <button className="text-xl bg-white rounded mx-2" onClick={()=> {setAdd(!add)}}>+</button>
+        <button className="text-xl bg-black text-white rounded px-2 mx-2" onClick={()=> {setAdd(!add)}}>⚙</button>
 
       </div>
       <div className="flex flex-row justify-center" >
@@ -29,8 +29,8 @@ function App() {
 
       <div className="my-4">
         {articles.map((entry) => (
-          <div className="flex flex-row justify-center m-2" >
-            <button className="text-white bg-black rounded-md px-2" onClick={()=> setArticles(articles.filter((element) => entry.id !== element.id))}>🗑</button>
+          <div className="flex flex-row justify-center m-2 " >
+            {add ? <button className="text-white bg-black rounded-md px-2" onClick={()=> setArticles(articles.filter((element) => entry.id !== element.id))}>🗑</button>: <></>}
             <div className="mx-1 w-1/5">{entry.price + " €"}</div>
             <div className="mx-1 w-1/2">{entry.article}</div>
             <div className="mx-1 w-6">{entry.count}</div>
